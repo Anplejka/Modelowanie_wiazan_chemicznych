@@ -18,7 +18,7 @@ float angle(atom_t a, atom_t b)
     // iloczyn skalarny
     float dot = a.pos.x * b.pos.x + a.pos.y * b.pos.y + a.pos.z * b.pos.z;
 
-    float len = distance(atom_t a, atom_t b);
+    float len = distance(a, b);
     float cos_theta = dot / (len * len);
 
     // zabezpieczenie przed błędem numerycznym

@@ -1,8 +1,8 @@
-//
-// Created by 501541 on 18.05.2026.
-//
+
 
 #ifndef MODELOWANIE_WIAZAN_CHEMICZNYCH_SIMULATION_H
 #define MODELOWANIE_WIAZAN_CHEMICZNYCH_SIMULATION_H
+
+void simulate(atom_t *atoms, int n);            // funkcja simulate
 
 #endif //MODELOWANIE_WIAZAN_CHEMICZNYCH_SIMULATION_H

@@ -8,8 +8,8 @@ typedef struct {
     float y;
     float z;
 }; atom_t;
-int read_atoms(const char *filename, atom_t **atoms) {
-    f = fopen(filename, "r");
-    if (f == NULL) return -1;
+// int read_ atoms(const char *filename, atom_t **atoms) {
+//    f = fopen(filename, "r");
+// if (f == NULL) return -1;
 
 }

@@ -7,7 +7,7 @@
 
 // Function declarations
 void simulate(atom_t *atoms, int n);
-//
+
 
 
 // Functions

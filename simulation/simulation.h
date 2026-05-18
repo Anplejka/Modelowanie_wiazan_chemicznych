@@ -3,6 +3,6 @@
 #ifndef MODELOWANIE_WIAZAN_CHEMICZNYCH_SIMULATION_H
 #define MODELOWANIE_WIAZAN_CHEMICZNYCH_SIMULATION_H
 
-void simulate(atom_t *atoms, int n);            // funkcja simulate
+void simulate(atom_t *atoms, int n);
 
 #endif //MODELOWANIE_WIAZAN_CHEMICZNYCH_SIMULATION_H

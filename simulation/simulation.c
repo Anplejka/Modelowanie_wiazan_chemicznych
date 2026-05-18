@@ -26,7 +26,7 @@ void simulate(atom_t *atoms, int n)
             {
                 count++;
 
-                printf("Wiazanie: %d - %d  Dystans=%.2f  Prawdopodobienstwo=%.2f\n", atoms[i].id, atoms[j].id, dist, p);
+                printf("Wiazanie: %d - %d  Dystans: %.2f  Prawdopodobienstwo: %.2f\n", atoms[i].id, atoms[j].id, dist, p);
             }
         }
     }

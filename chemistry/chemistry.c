@@ -13,17 +13,34 @@ float distance(atom_t a, atom_t b)
     return sqrt(dx * dx + dy * dy + dz * dz);
 }
 
-float angle(atom_t a, atom_t b)
+
+float angle(atom_t a, atom_t b, atom_t c)
 {
+    // wektor BA
+    float bax = a.pos.x - b.pos.x;
+    float bay = a.pos.y - b.pos.y;
+    float baz = a.pos.z - b.pos.z;
+
+    // wektor BC
+    float bcx = c.pos.x - b.pos.x;
+    float bcy = c.pos.y - b.pos.y;
+    float bcz = c.pos.z - b.pos.z;
+
     // iloczyn skalarny
-    float dot = a.pos.x * b.pos.x + a.pos.y * b.pos.y + a.pos.z * b.pos.z;
+    float dot = bax * bcx + bay * bcy + baz * bcz;
 
-    float len = distance(a, b);
-    float cos_theta = dot / (len * len);
+    // długości wektorów
+    float lenBA = sqrt(bax*bax + bay*bay + baz*baz);
+    float lenBC = sqrt(bcx*bcx + bcy*bcy + bcz*bcz);
 
-    // zabezpieczenie przed błędem numerycznym
+    if (lenBA == 0 || lenBC == 0)
+        return 0;
+
+    float cos_theta = dot / (lenBA * lenBC);
+
+    // zabezpieczenie numeryczne
     if (cos_theta > 1) cos_theta = 1;
     if (cos_theta < -1) cos_theta = -1;
 
-    return acos(cos_theta); // wynik w radianach
+    return acos(cos_theta);
 }

@@ -22,7 +22,7 @@ int read_atoms(const char *filename, atom_t **atoms) {
         return -1;
     }
     //liczba atomów
-int n;
+    int n;
     //wczytanie liczby atomów
     fscanf(f, "%d", &n);
 
@@ -38,12 +38,13 @@ int n;
 
     //sprawdzenie malloc
     if (*atoms == NULL);
-{
-    printf("Blad malloc\n");
-    fclose(f);
-    return -1;
-}
-        //pętla wczytująca atomy
-        for (int i = 0; i < n; i++) {
+    {
+        printf("Blad malloc\n");
+        fclose(f);
+        return -1;
+    }
+    //pętla wczytująca atomy
+    for (int i = 0; i < n; i++) {
 
-        }
+    }
+}

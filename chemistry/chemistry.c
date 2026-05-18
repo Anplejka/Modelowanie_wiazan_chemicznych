@@ -13,7 +13,6 @@ float distance(atom_t a, atom_t b)
     return sqrt(dx * dx + dy * dy + dz * dz);
 }
 
-
 float angle(atom_t a, atom_t b, atom_t c)
 {
     // wektor BA

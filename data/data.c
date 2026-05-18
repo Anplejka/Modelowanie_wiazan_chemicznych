@@ -10,9 +10,16 @@ int read_atoms(const char *filename, atom_t **atoms) {
     }
     //liczba atomów
     int n;
+
     //wczytanie liczby atomów, zabezpieczenie
     if (fscanf(f, "%d", &n) != 1) {
         printf("Blad wczytania n\n");
+        fclose(f);
+        return -1;
+    }
+    //sprawdza, czy liczba atomów jest większa niż 0
+    if (n<=0) {
+        printf("Blad: nieprawidlowa liczba atomow\n");
         fclose(f);
         return -1;
     }

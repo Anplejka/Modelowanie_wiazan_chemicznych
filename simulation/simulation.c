@@ -3,6 +3,9 @@
 #include "simulation.h"
 #include "../chemistry/chemistry.h"
 
+// Variables
+int count = 0;
+
 
 // Function declarations
 void simulate(atom_t *atoms, int n);
@@ -21,8 +24,12 @@ void simulate(atom_t *atoms, int n)
 
             if (p > 0.5)                                // jesli prawdopodobienstwo jest duze to jest wiazanie
             {
-                printf("Wiazanie: %d - %d P = %f\n", atoms[i].id, atoms[j].id, p);
+                count++;
+
+                printf("Wiazanie: %d - %d  Dystans=%.2f  Prawdopodobienstwo=%.2f\n", atoms[i].id, atoms[j].id, dist, p);
             }
         }
     }
+
+    printf("Liczba wiazan: %d\n", count);
 }

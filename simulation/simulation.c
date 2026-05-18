@@ -11,7 +11,6 @@ int count = 0;
 void simulate(atom_t *atoms, int n);
 
 
-
 // Functions
 void simulate(atom_t *atoms, int n)
 {

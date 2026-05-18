@@ -5,11 +5,11 @@
 
 float wynik;
 
-double distance(float x1, float y1, float z1, float x2, float y2, float z2)
+double distance(atoms[i], atoms[j])
 {
-    float dx = x2 - x1 ;
-    float dy = y2 - y1 ;
-    float dz = z2 - z1;
+    float dx = atom[i].x - atom[j].x;
+    float dy = atom[i].x - atom[j].x;
+    float dz = atom[i].x - atom[j].x;
 
     return wynik = sqrt(dx * dx + dy * dy + dz * dz);
 }

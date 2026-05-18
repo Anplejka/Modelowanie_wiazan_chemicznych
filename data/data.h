@@ -14,5 +14,5 @@ typedef struct {
     int type;
     position_t pos;
 } atom_t;
-int read_at
+int read_atoms(const char *filename, atom_t **atoms);
 #endif //MODELOWANIE_WIAZAN_CHEMICZNYCH_DATA_H

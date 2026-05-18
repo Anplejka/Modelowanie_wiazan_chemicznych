@@ -3,14 +3,13 @@
 #include "chemistry.h"
 #include "../data/data.h"
 
-float wynik;
 
-double distance(float x1, float y1, float z1, float x2, float y2, float z2)
+float distance(atom_t a, atom_t b)
 {
-    float dx = x2 - x1 ;
-    float dy = y2 - y1 ;
-    float dz = z2 - z1;
+    float dx = a.x - b.x;
+    float dy = a.y - b.y;
+    float dz = a.z - b.z;
 
-    return wynik = sqrt(dx * dx + dy * dy + dz * dz);
+    return sqrt(dx * dx + dy * dy + dz * dz);
 }
 

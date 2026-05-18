@@ -44,3 +44,7 @@ float angle(atom_t a, atom_t b, atom_t c)
 
     return acos(cos_theta);
 }
+
+float bond_probability(atom_t a, atom_t b) {
+
+}

@@ -19,9 +19,9 @@ void simulate(atom_t *atoms, int n)
             float dist = distance(atoms[i], atoms[j]);
             float p = bond_probability(atoms[i], atoms[j], dist);
 
-            if (p > 0.5)
+            if (p > 0.5)                                // jesli prawdopodobienstwo jest duze to jest wiazanie
             {
-                printf("Wiazanie: %d - %d P = %f\n", i, j, p);
+                printf("Wiazanie: %d - %d P = %f\n", atoms[i].id, atoms[j].id, p);
             }
         }
     }

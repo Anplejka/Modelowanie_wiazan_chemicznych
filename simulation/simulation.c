@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include "../data/data.h"
-#include "../data/data.c"
 #include "simulation.h"
 #include "../chemistry/chemistry.h"
-#include "../chemistry/chemistry.c"
+
 
 // Function declarations
 void simulate(atom_t *atoms, int n);

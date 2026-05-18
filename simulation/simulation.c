@@ -1,3 +1,12 @@
-//
-// Created by 501541 on 18.05.2026.
-//
+#include <stdio.h>
+#include "../data/data.h"
+#include "simulation.h"
+#include "../chemistry/chemistry.h"
+
+// Function declarations
+// void simulate(atom_t *atoms, int n);
+
+
+
+// Functions
+//void simulate(atom_t *atoms, int n)

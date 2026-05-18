@@ -4,7 +4,7 @@
 #include "../data/data.h"
 
 
-float distance(position_t a, position_t b)
+float distance(atom_t a, atom_t b)
 {
     float dx = a.pos.x - b.pos.x;
     float dy = a.pos.y - b.pos.y;
@@ -13,12 +13,12 @@ float distance(position_t a, position_t b)
     return sqrt(dx * dx + dy * dy + dz * dz);
 }
 
-float angle(position_t a, position_t b)
+float angle(atom_t a, atom_t b)
 {
     // iloczyn skalarny
     float dot = a.pos.x * b.pos.x + a.pos.y * b.pos.y + a.pos.z * b.pos.z;
 
-    float len = distance(position_t a, position_t b;
+    float len = distance(atom_t a, atom_t b;
     float cos_theta = dot / (len * len);
 
     // zabezpieczenie przed błędem numerycznym

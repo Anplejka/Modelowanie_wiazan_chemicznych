@@ -1,21 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../data/data.h"
-typedef struct {
-    float x;
-    float y;
-    float z;
-} position_t;
-typedef struct {
-    int id;
-    int type;
-    position_t pos;
-} atom_t;
 int read_atoms(const char *filename, atom_t **atoms) {
-    FILE *f;
-
-    //otwieranie pliku
-    f = fopen(filename, "r");
+    FILE *f = fopen(filename, "r");
     //sprawdzenie, czy plik istnieje
     if (f == NULL) {
         printf("Blad otwierania pliku\n");
@@ -23,28 +10,38 @@ int read_atoms(const char *filename, atom_t **atoms) {
     }
     //liczba atomów
     int n;
-    //wczytanie liczby atomów
-    fscanf(f, "%d", &n);
+    //wczytanie liczby atomów, zabezpieczenie
+    if (fscanf(f, "%d", &n) != 1) {
+        printf("Blad wczytania n\n");
+        fclose(f);
+        return -1;
+    }
 
-    //zmienne na rozmiar pudla
-    float boxx, boxy, boxz;
-
-    //wczytanie rozmiaru
-    fscanf(f, "%f %f %f", &boxx, &boxy, &boxz);
-    printf("Rozmiar pudla: %f %f %f\n",
-        boxx, boxy, boxz);
     //alokacja pamięci
     *atoms = malloc(n * sizeof(atom_t));
 
     //sprawdzenie malloc
-    if (*atoms == NULL);
+    if (*atoms == NULL)
     {
         printf("Blad malloc\n");
         fclose(f);
         return -1;
     }
     //pętla wczytująca atomy
-    for (int i = 0; i < n; i++) {
 
+    for (int i = 0; i < n; i++) {
+        if (fscanf(f, "%d %f %f %f",
+            &(*atoms)[i].type,
+            &(*atoms)[i].pos.x,
+            &(*atoms)[i].pos.y,
+            &(*atoms)[i].pos.z) != 4)
+        {
+            printf("Blad atomu %d\n", i);
+            fclose(f);
+            return -1;
+        }
+        (*atoms)[i].id = i;
     }
+    fclose(f);
+    return n;
 }

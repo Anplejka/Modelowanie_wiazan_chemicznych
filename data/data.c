@@ -7,7 +7,7 @@ typedef struct {
     float x;
     float y;
     float z;
-}; atom_t;
+} atom_t;
 // int read_ atoms(const char *filename, atom_t **atoms) {
 //    f = fopen(filename, "r");
 // if (f == NULL) return -1;

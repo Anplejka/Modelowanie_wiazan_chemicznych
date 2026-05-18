@@ -7,6 +7,6 @@
 #include "../data/data.h"
 
 float distance(atom_t a, atom_t b);
-float angle(atom_t a, atom_t b);
+float angle(atom_t a, atom_t b, atom_t c);
 
 #endif //MODELOWANIE_WIAZAN_CHEMICZNYCH_CHEMISTRY_H

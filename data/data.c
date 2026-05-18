@@ -12,4 +12,3 @@ typedef struct {
 //    f = fopen(filename, "r");
 // if (f == NULL) return -1;
 
-}

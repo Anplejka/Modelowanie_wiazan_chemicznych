@@ -45,6 +45,12 @@ float angle(atom_t a, atom_t b, atom_t c)
     return acos(cos_theta);
 }
 
-float bond_probability(atom_t a, atom_t b) {
+float bond_probability(atom_t a, atom_t b, float max_distance)
+{
+    float dist = distance(a, b);
 
+    if (dist > max_distance)
+        return 0.0f;
+
+    return 1.0f - (dist / max_distance);
 }
